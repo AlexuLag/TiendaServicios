@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TiendaServicios.Api.Autor.Aplicacion;
 using TiendaServicios.Api.Autor.Persistencia;
 
 namespace TiendaServicios.Api.Autor
@@ -32,6 +34,8 @@ namespace TiendaServicios.Api.Autor
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TiendaServicios.Api.Autor", Version = "v1" });
             });
+
+            services.AddMediatR(typeof(Nuevo.Manejador).Assembly);
 
             services.AddDbContext<ContextoAutor>
                 (options =>

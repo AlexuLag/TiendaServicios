@@ -13,8 +13,8 @@ namespace TiendaServicios.Api.Autor.Aplicacion
     public class Consulta
     {
         public class ListaAutor : IRequest<List<AutorLibro>>
-        { 
-
+        {
+          
         }
 
         public class Manejador : IRequestHandler<ListaAutor, List<AutorLibro>>
